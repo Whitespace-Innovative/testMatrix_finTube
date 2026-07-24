@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Test Matrix Cube</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #121212;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+    }
+
+    #canvas-container {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+
+    /* UI Containers */
+    #ui-container {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 95vh;
+      overflow-y: auto;
+      padding-right: 5px;
+    }
+
+    .panel {
+      background: rgba(25, 25, 25, 0.90);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      padding: 14px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      width: 310px;
+    }
+
+    h3 {
+      margin: 0 0 10px 0;
+      font-size: 15px;
+      color: #4da6ff;
+    }
+
+    .form-group {
+      margin-bottom: 8px;
+    }
+
+    label {
+      font-size: 12px;
+      color: #aaa;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    input[type="text"], input[type="number"], input[type="file"] {
+      background: #242424;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 6px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    input[type="text"]:focus, input[type="number"]:focus {
+      border-color: #4da6ff;
+      outline: none;
+    }
+
+    button {
+      background: #2b2b2b;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 7px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: background 0.2s;
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    button:hover { background: #3d3d3d; }
+    button.primary { background: #1a5fb4; border-color: #3584e4; }
+    button.primary:hover { background: #3584e4; }
+    button.danger { background: #a51d2d; border-color: #c01c28; }
+    button.danger:hover { background: #c01c28; }
+
+    /* Dimension Header & +/- Buttons */
+    .dim-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+
+    .dim-header label {
+      font-weight: bold;
+      color: #4da6ff;
+      margin: 0;
+    }
+
+    .btn-group-sm {
+      display: flex;
+      gap: 4px;
+    }
+
+    .btn-sm {
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      margin: 0;
+      font-weight: bold;
+      line-height: 1;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dim-edit-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-height: 120px;
+      overflow-y: auto;
+      margin-bottom: 6px;
+    }
+
+    /* Selected Cell Inspector Panel */
+    #cell-info {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+      display: none;
+    }
+
+    .status-btn-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .status-btn {
+      padding: 8px;
+      font-size: 11px;
+      font-weight: bold;
+      border: none;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Legend */
+    #legend-items {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .color-box {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    /* Tooltip */
+    #tooltip {
+      position: absolute;
+      pointer-events: none;
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid #444;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      display: none;
+      z-index: 20;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+
+  <div id="canvas-container"></div>
+  <div id="tooltip"></div>
+
+  <!-- UI Sidebar -->
+  <div id="ui-container">
+    <div class="panel">
+      <h3>Matrix Config Controls</h3>
+      <div class="form-group">
+        <label>Load Custom JSON:</label>
+        <input type="file" id="file-input" accept=".json">
+      </div>
+      <button class="primary" id="export-btn">Export Updated JSON</button>
+      <button class="danger" id="reset-storage-btn">Reset to Defaults</button>
+    </div>
+
+    <!-- Edit Dimensions Panel -->
+    <div class="panel">
+      <h3>Grid Settings & Counts</h3>
+      
+      <div class="form-group">
+        <label>Cube Spacing (Distance):</label>
+        <input type="number" id="spacing-input" step="0.2" min="0.8" max="6.0">
+      </div>
+
+      <!-- Columns Section -->
+      <div class="dim-header">
+        <label>Columns (X-Axis):</label>
+        <div class="btn-group-sm">
+          <button class="btn-sm" onclick="addDimensionItem('columns')">+</button>
+          <button class="btn-sm" onclick="removeDimensionItem('columns')">-</button>
+        </div>
+      </div>
+      <div id="cols-edit-list" class="dim-edit-list"></div>
+
+      <!-- Rows Section -->
+      <div class="dim-header">
+        <label>Rows (Y-Axis):</label>
+        <div class="btn-group-sm">
+          <button class="btn-sm" onclick="addDimensionItem('rows')">+</button>
+          <button class="btn-sm" onclick="removeDimensionItem('rows')">-</button>
+        </div>
+      </div>
+      <div id="rows-edit-list" class="dim-edit-list"></div>
+
+      <!-- Depth Section -->
+      <div class="dim-header">
+        <label>Depth (Z-Axis):</label>
+        <div class="btn-group-sm">
+          <button class="btn-sm" onclick="addDimensionItem('depth')">+</button>
+          <button class="btn-sm" onclick="removeDimensionItem('depth')">-</button>
+        </div>
+      </div>
+      <div id="depth-edit-list" class="dim-edit-list"></div>
+
+      <button id="apply-dims-btn" class="primary">Apply Name Edits</button>
+    </div>
+
+    <div class="panel">
+      <h3>Status Legend</h3>
+      <div id="legend-items"></div>
+    </div>
+  </div>
+
+  <!-- Selected Cell Inspector Panel -->
+  <div id="cell-info" class="panel">
+    <h3>Selected Voxel</h3>
+    <div id="cell-details" style="font-size: 12px; line-height: 1.6;"></div>
+    <div style="margin-top: 10px; font-size: 12px; font-weight: bold;">Update Cell Status:</div>
+    <div class="status-btn-group" id="status-buttons"></div>
+  </div>
+
+  <script>
+    let scene, camera, renderer, controls;
+    let matrixData = null;
+    let voxels = [];
+    let labelSprites = [];
+    let raycaster, mouse;
+    let selectedVoxel = null;
+
+    const cubeSize = 0.8;
+    let spacing = 1.8;
+    let statusMap = {};
+
+    init();
+
+    function init() {
+      const container = document.getElementById('canvas-container');
+
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x121212);
+
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      container.appendChild(renderer.domElement);
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+      scene.add(ambientLight);
+
+      const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      dirLight.position.set(20, 40, 20);
+      scene.add(dirLight);
+
+      raycaster = new THREE.Raycaster();
+      mouse = new THREE.Vector2();
+
+      window.addEventListener('resize', onWindowResize);
+      renderer.domElement.addEventListener('mousemove', onMouseMove);
+      renderer.domElement.addEventListener('click', onClick);
+
+      document.getElementById('file-input').addEventListener('change', handleFileSelect);
+      document.getElementById('export-btn').addEventListener('click', exportJSON);
+      document.getElementById('apply-dims-btn').addEventListener('click', applyDimensionEdits);
+      document.getElementById('spacing-input').addEventListener('input', (e) => {
+        spacing = parseFloat(e.target.value) || 1.8;
+        matrixData.spacing = spacing;
+        buildMatrix(matrixData, false); // Don't reset camera distance when changing spacing
+        saveStateToLocalStorage();
+      });
+
+      document.getElementById('reset-storage-btn').addEventListener('click', () => {
+        localStorage.removeItem('testMatrixState');
+        fetchDefaultData();
+      });
+
+      fetchDefaultData();
+      animate();
+    }
+
+    function fetchDefaultData() {
+      fetch('matrix_data.json')
+        .then(res => res.json())
+        .then(data => loadData(data))
+        .catch(() => {
+          const fallback = {
+            spacing: 1.8,
+            dimensions: {
+              columns: ["Unit", "Integration", "E2E", "Performance"],
+              rows: ["Auth", "Payments", "Dashboard", "API"],
+              depth: ["Dev", "Staging", "Prod"]
+            },
+            statuses: [
+              { id: "pending", label: "Pending", color: "#6c757d" },
+              { id: "in_progress", label: "In Progress", color: "#ffc107" },
+              { id: "passed", label: "Passed", color: "#28a745" },
+              { id: "failed", label: "Failed", color: "#dc3545" }
+            ],
+            cells: []
+          };
+          loadData(fallback);
+        });
+    }
+
+    function loadData(data) {
+      const savedState = localStorage.getItem('testMatrixState');
+      if (savedState) {
+        try {
+          const parsed = JSON.parse(savedState);
+          data.cells = parsed.cells || data.cells;
+          data.dimensions = parsed.dimensions || data.dimensions;
+          if (parsed.spacing) data.spacing = parsed.spacing;
+        } catch(e) {}
+      }
+
+      matrixData = data;
+      spacing = data.spacing || 1.8;
+      document.getElementById('spacing-input').value = spacing;
+
+      statusMap = {};
+      const legendContainer = document.getElementById('legend-items');
+      legendContainer.innerHTML = '';
+
+      data.statuses.forEach(s => {
+        statusMap[s.id] = s;
+        const item = document.createElement('div');
+        item.className = 'legend-item';
+        item.innerHTML = `<div class="color-box" style="background:${s.color}"></div><span>${s.label}</span>`;
+        legendContainer.appendChild(item);
+      });
+
+      populateDimensionInputs();
+      buildMatrix(data, true); // Reset camera on initial load
+    }
+
+    function buildMatrix(data, resetCamera = false) {
+      voxels.forEach(v => scene.remove(v));
+      labelSprites.forEach(s => scene.remove(s));
+      voxels = [];
+      labelSprites = [];
+
+      const numCols = data.dimensions.columns.length;
+      const numRows = data.dimensions.rows.length;
+      const numDepth = data.dimensions.depth.length;
+
+      const offsetX = ((numCols - 1) * spacing) / 2;
+      const offsetY = ((numRows - 1) * spacing) / 2;
+      const offsetZ = ((numDepth - 1) * spacing) / 2;
+
+      const cellStateMap = {};
+      if (data.cells) {
+        data.cells.forEach(c => {
+          cellStateMap[`${c.col}_${c.row}_${c.depth}`] = c.status;
+        });
+      }
+
+      const geometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+
+      for (let c = 0; c < numCols; c++) {
+        for (let r = 0; r < numRows; r++) {
+          for (let d = 0; d < numDepth; d++) {
+            
+            const key = `${c}_${r}_${d}`;
+            const statusId = cellStateMap[key] || "pending";
+            const statusConfig = statusMap[statusId] || { color: '#888888' };
+
+            const material = new THREE.MeshStandardMaterial({
+              color: new THREE.Color(statusConfig.color),
+              roughness: 0.3,
+              metalness: 0.1,
+              transparent: true,
+              opacity: 0.85
+            });
+
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(
+              (c * spacing) - offsetX,
+              (offsetY - (r * spacing)),
+              (d * spacing) - offsetZ
+            );
+
+            mesh.userData = {
+              colIndex: c,
+              rowIndex: r,
+              depthIndex: d,
+              status: statusId
+            };
+
+            scene.add(mesh);
+            voxels.push(mesh);
+          }
+        }
+      }
+
+      // 3D Text Labels
+      data.dimensions.columns.forEach((name, c) => {
+        const sprite = createTextSprite(name, '#4da6ff');
+        sprite.position.set((c * spacing) - offsetX, offsetY + spacing * 0.8, -offsetZ);
+        scene.add(sprite);
+        labelSprites.push(sprite);
+      });
+
+      data.dimensions.rows.forEach((name, r) => {
+        const sprite = createTextSprite(name, '#ff8080');
+        sprite.position.set(-offsetX - spacing * 1.2, offsetY - (r * spacing), -offsetZ);
+        scene.add(sprite);
+        labelSprites.push(sprite);
+      });
+
+      data.dimensions.depth.forEach((name, d) => {
+        const sprite = createTextSprite(name, '#50e3c2');
+        sprite.position.set(-offsetX - spacing * 1.2, -offsetY - spacing * 0.5, (d * spacing) - offsetZ);
+        scene.add(sprite);
+        labelSprites.push(sprite);
+      });
+
+      if (resetCamera) {
+        const maxDim = Math.max(numCols, numRows, numDepth);
+        camera.position.set(maxDim * 3, maxDim * 2.5, maxDim * 3.5);
+        controls.target.set(0, 0, 0);
+        controls.update();
+      }
+    }
+
+    function createTextSprite(text, color = '#ffffff') {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = 512;
+      canvas.height = 128;
+
+      ctx.fillStyle = 'rgba(0,0,0,0.6)';
+      ctx.roundRect(10, 10, canvas.width - 20, canvas.height - 20, 15);
+      ctx.fill();
+
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 4;
+      ctx.stroke();
+
+      ctx.font = 'Bold 36px sans-serif';
+      ctx.fillStyle = color;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+
+      const texture = new THREE.CanvasTexture(canvas);
+      const material = new THREE.SpriteMaterial({ map: texture, transparent: true });
+      const sprite = new THREE.Sprite(material);
+      sprite.scale.set(2.2, 0.55, 1);
+      return sprite;
+    }
+
+    function populateDimensionInputs() {
+      const createInputs = (containerId, items) => {
+        const container = document.getElementById(containerId);
+        container.innerHTML = '';
+        items.forEach((item, idx) => {
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.value = item;
+          input.dataset.index = idx;
+          container.appendChild(input);
+        });
+      };
+
+      createInputs('cols-edit-list', matrixData.dimensions.columns);
+      createInputs('rows-edit-list', matrixData.dimensions.rows);
+      createInputs('depth-edit-list', matrixData.dimensions.depth);
+    }
+
+    // Add or Remove Dimension Counts
+    function addDimensionItem(dimKey) {
+      const arr = matrixData.dimensions[dimKey];
+      const newLabel = `${dimKey.charAt(0).toUpperCase() + dimKey.slice(1, -1)} ${arr.length + 1}`;
+      arr.push(newLabel);
+      
+      populateDimensionInputs();
+      buildMatrix(matrixData, false);
+      saveStateToLocalStorage();
+    }
+
+    function removeDimensionItem(dimKey) {
+      const arr = matrixData.dimensions[dimKey];
+      if (arr.length <= 1) return; // Keep at least 1 item per axis
+      arr.pop();
+
+      populateDimensionInputs();
+      buildMatrix(matrixData, false);
+      saveStateToLocalStorage();
+    }
+
+    function applyDimensionEdits() {
+      const readInputs = (containerId) => {
+        const inputs = document.querySelectorAll(`#${containerId} input`);
+        return Array.from(inputs).map(inp => inp.value || "Unnamed");
+      };
+
+      matrixData.dimensions.columns = readInputs('cols-edit-list');
+      matrixData.dimensions.rows = readInputs('rows-edit-list');
+      matrixData.dimensions.depth = readInputs('depth-edit-list');
+
+      buildMatrix(matrixData, false);
+      saveStateToLocalStorage();
+
+      if (selectedVoxel) {
+        showCellInspector(selectedVoxel);
+      }
+    }
+
+    function onMouseMove(event) {
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(voxels);
+      const tooltip = document.getElementById('tooltip');
+
+      if (intersects.length > 0) {
+        const v = intersects[0].object.userData;
+        const colName = matrixData.dimensions.columns[v.colIndex] || "";
+        const rowName = matrixData.dimensions.rows[v.rowIndex] || "";
+        const depthName = matrixData.dimensions.depth[v.depthIndex] || "";
+
+        tooltip.style.display = 'block';
+        tooltip.style.left = (event.clientX + 12) + 'px';
+        tooltip.style.top = (event.clientY + 12) + 'px';
+        tooltip.innerHTML = `
+          <b>Column:</b> ${colName}<br>
+          <b>Row:</b> ${rowName}<br>
+          <b>Depth:</b> ${depthName}<br>
+          <b>Status:</b> ${statusMap[v.status]?.label || v.status}
+        `;
+      } else {
+        tooltip.style.display = 'none';
+      }
+    }
+
+    function onClick(event) {
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(voxels);
+
+      if (intersects.length > 0) {
+        selectedVoxel = intersects[0].object;
+        showCellInspector(selectedVoxel);
+      }
+    }
+
+    function showCellInspector(mesh) {
+      const v = mesh.userData;
+      const infoBox = document.getElementById('cell-info');
+      const details = document.getElementById('cell-details');
+      const btnGroup = document.getElementById('status-buttons');
+
+      const colName = matrixData.dimensions.columns[v.colIndex] || "";
+      const rowName = matrixData.dimensions.rows[v.rowIndex] || "";
+      const depthName = matrixData.dimensions.depth[v.depthIndex] || "";
+
+      infoBox.style.display = 'block';
+      details.innerHTML = `
+        <b>Column:</b> ${colName}<br>
+        <b>Row:</b> ${rowName}<br>
+        <b>Depth:</b> ${depthName}<br>
+        <b>Current Status:</b> <span style="color:${statusMap[v.status]?.color}">${statusMap[v.status]?.label}</span>
+      `;
+
+      btnGroup.innerHTML = '';
+      matrixData.statuses.forEach(s => {
+        const btn = document.createElement('button');
+        btn.className = 'status-btn';
+        btn.style.backgroundColor = s.color;
+        btn.innerText = s.label;
+        btn.onclick = () => updateCellStatus(mesh, s.id);
+        btnGroup.appendChild(btn);
+      });
+    }
+
+    function updateCellStatus(mesh, newStatusId) {
+      mesh.userData.status = newStatusId;
+      mesh.material.color.set(new THREE.Color(statusMap[newStatusId].color));
+
+      saveStateToLocalStorage();
+      showCellInspector(mesh);
+    }
+
+    function saveStateToLocalStorage() {
+      const cells = voxels.map(v => ({
+        col: v.userData.colIndex,
+        row: v.userData.rowIndex,
+        depth: v.userData.depthIndex,
+        status: v.userData.status
+      }));
+
+      matrixData.cells = cells;
+
+      localStorage.setItem('testMatrixState', JSON.stringify({
+        cells: matrixData.cells,
+        dimensions: matrixData.dimensions,
+        spacing: spacing
+      }));
+    }
+
+    function handleFileSelect(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        try {
+          const parsed = JSON.parse(evt.target.result);
+          localStorage.removeItem('testMatrixState');
+          loadData(parsed);
+        } catch(err) {
+          alert('Invalid JSON file.');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function exportJSON() {
+      if (!matrixData) return;
+      saveStateToLocalStorage();
+
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(matrixData, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", "updated_matrix_data.json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+  </script>
+</body>
+</html>

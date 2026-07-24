@@ -1,0 +1,407 @@
+{
+  "spacing": 2.4,
+  "dimensions": {
+    "columns": [
+      "Interval Weight",
+      "Wave Front",
+      "Total Loading"
+    ],
+    "rows": [
+      "1 Coat",
+      "2 Coat",
+      "3 Coat",
+      "4 Coat",
+      "5 Coat"
+    ],
+    "depth": [
+      "Fan Speed 100%",
+      "Fan Speed 75%",
+      "Fan Speed 50%",
+      "Fan Speed 25%"
+    ]
+  },
+  "statuses": [
+    {
+      "id": "pending",
+      "label": "Pending",
+      "color": "#6c757d"
+    },
+    {
+      "id": "in_progress",
+      "label": "In Progress",
+      "color": "#ffc107"
+    },
+    {
+      "id": "passed",
+      "label": "Passed",
+      "color": "#28a745"
+    },
+    {
+      "id": "failed",
+      "label": "Failed",
+      "color": "#dc3545"
+    }
+  ],
+  "cells": [
+    {
+      "col": 0,
+      "row": 0,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 0,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 0,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 0,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 1,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 1,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 1,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 1,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 2,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 2,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 2,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 2,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 3,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 3,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 3,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 3,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 4,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 4,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 4,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 0,
+      "row": 4,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 0,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 0,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 0,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 0,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 2,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 2,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 2,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 2,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 3,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 3,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 3,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 3,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 4,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 4,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 4,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 1,
+      "row": 4,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 0,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 0,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 0,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 0,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 1,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 1,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 1,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 1,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 2,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 2,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 2,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 2,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 3,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 3,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 3,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 3,
+      "depth": 3,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 4,
+      "depth": 0,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 4,
+      "depth": 1,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 4,
+      "depth": 2,
+      "status": "pending"
+    },
+    {
+      "col": 2,
+      "row": 4,
+      "depth": 3,
+      "status": "pending"
+    }
+  ]
+}
