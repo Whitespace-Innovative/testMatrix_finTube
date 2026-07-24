@@ -1,5 +1,5 @@
 {
-  "spacing": 2.4,
+  "spacing": 1.2,
   "dimensions": {
     "columns": [
       "Interval Weight",
@@ -143,7 +143,7 @@
       "col": 0,
       "row": 4,
       "depth": 0,
-      "status": "pending"
+      "status": "passed"
     },
     {
       "col": 0,
@@ -161,7 +161,7 @@
       "col": 0,
       "row": 4,
       "depth": 3,
-      "status": "pending"
+      "status": "passed"
     },
     {
       "col": 1,
