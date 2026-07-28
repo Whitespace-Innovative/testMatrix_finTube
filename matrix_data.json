@@ -172,7 +172,7 @@
       "col": 1,
       "row": 0,
       "depth": 0,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
@@ -196,7 +196,7 @@
       "col": 1,
       "row": 1,
       "depth": 0,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
@@ -220,7 +220,7 @@
       "col": 1,
       "row": 2,
       "depth": 0,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
@@ -244,7 +244,7 @@
       "col": 1,
       "row": 3,
       "depth": 0,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
