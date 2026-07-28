@@ -178,19 +178,19 @@
       "col": 1,
       "row": 0,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
       "row": 0,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
       "row": 0,
       "depth": 3,
-      "status": "pending"
+      "status": "passed"
     },
     {
       "col": 1,
@@ -202,19 +202,19 @@
       "col": 1,
       "row": 1,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
       "row": 1,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
       "row": 1,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
@@ -226,19 +226,19 @@
       "col": 1,
       "row": 2,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
       "row": 2,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
       "row": 2,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
@@ -250,19 +250,19 @@
       "col": 1,
       "row": 3,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
       "row": 3,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
       "row": 3,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
