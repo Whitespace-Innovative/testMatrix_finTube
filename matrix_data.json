@@ -1,5 +1,5 @@
 {
-  "spacing": 1.6,
+  "spacing": 1.8,
   "dimensions": {
     "columns": [
       "Interval Weight",
@@ -40,6 +40,11 @@
       "id": "failed",
       "label": "Failed",
       "color": "#dc3545"
+    },
+    {
+      "id": "out_of_scope",
+      "label": "Out of Scope",
+      "color": "#4a5568"
     }
   ],
   "cells": [
@@ -53,19 +58,19 @@
       "col": 0,
       "row": 0,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
       "row": 0,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
       "row": 0,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
@@ -77,19 +82,19 @@
       "col": 0,
       "row": 1,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
       "row": 1,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
       "row": 1,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
@@ -101,19 +106,19 @@
       "col": 0,
       "row": 2,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
       "row": 2,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
       "row": 2,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
@@ -125,19 +130,19 @@
       "col": 0,
       "row": 3,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
       "row": 3,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
       "row": 3,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
@@ -149,19 +154,19 @@
       "col": 0,
       "row": 4,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
       "row": 4,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 0,
       "row": 4,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 1,
@@ -293,19 +298,19 @@
       "col": 2,
       "row": 0,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
       "row": 0,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
       "row": 0,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
@@ -317,19 +322,19 @@
       "col": 2,
       "row": 1,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
       "row": 1,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
       "row": 1,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
@@ -341,19 +346,19 @@
       "col": 2,
       "row": 2,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
       "row": 2,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
       "row": 2,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
@@ -365,19 +370,19 @@
       "col": 2,
       "row": 3,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
       "row": 3,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
       "row": 3,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
@@ -389,19 +394,19 @@
       "col": 2,
       "row": 4,
       "depth": 1,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
       "row": 4,
       "depth": 2,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 2,
       "row": 4,
       "depth": 3,
-      "status": "pending"
+      "status": "out_of_scope"
     }
   ]
 }
