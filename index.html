@@ -185,7 +185,17 @@
     .legend-item {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 8px;
+    }
+
+    .legend-count-badge {
+      font-weight: bold;
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 1px 7px;
+      border-radius: 10px;
+      color: #ddd;
     }
 
     .color-box {
@@ -248,6 +258,18 @@
       <button class="danger" id="reset-storage-btn">Reset to Defaults</button>
     </div>
 
+    <!-- Status Legend Panel (Placed at Top for Constant Visibility) -->
+    <div class="panel">
+      <h3>Status Legend & Summary</h3>
+      <div id="legend-items"></div>
+      
+      <!-- Out of Scope Display Toggle -->
+      <label class="toggle-row">
+        <input type="checkbox" id="toggle-out-of-scope">
+        Hide "Out of Scope" Cubes
+      </label>
+    </div>
+
     <!-- Edit Dimensions Panel -->
     <div class="panel">
       <h3>Grid Settings & Counts</h3>
@@ -288,17 +310,6 @@
       <div id="depth-edit-list" class="dim-edit-list"></div>
 
       <button id="apply-dims-btn" class="primary">Apply Name Edits</button>
-    </div>
-
-    <div class="panel">
-      <h3>Status Legend</h3>
-      <div id="legend-items"></div>
-      
-      <!-- Out of Scope Display Toggle -->
-      <label class="toggle-row">
-        <input type="checkbox" id="toggle-out-of-scope">
-        Hide "Out of Scope" Cubes
-      </label>
     </div>
   </div>
 
@@ -384,14 +395,12 @@
       animate();
     }
 
-    // Helper to determine visual parameters (scale, opacity, wireframe) per status
     function getMeshVisualConfig(statusId) {
       if (statusId === 'out_of_scope') {
         return { targetScale: 0.38, opacity: 0.25, wireframe: true };
       } else if (statusId === 'pending') {
         return { targetScale: 0.50, opacity: 0.70, wireframe: false };
       } else {
-        // Active / Complete: passed, failed, in_progress, etc.
         return { targetScale: 1.00, opacity: 0.85, wireframe: false };
       }
     }
@@ -437,20 +446,37 @@
       document.getElementById('spacing-input').value = spacing;
 
       statusMap = {};
-      const legendContainer = document.getElementById('legend-items');
-      legendContainer.innerHTML = '';
-
-      data.statuses.forEach((s, idx) => {
+      data.statuses.forEach(s => {
         statusMap[s.id] = s;
-        const keyHint = hotkeys[idx] ? ` [${hotkeys[idx]}]` : '';
-        const item = document.createElement('div');
-        item.className = 'legend-item';
-        item.innerHTML = `<div class="color-box" style="background:${s.color}"></div><span>${s.label}${keyHint}</span>`;
-        legendContainer.appendChild(item);
       });
 
       populateDimensionInputs();
       buildMatrix(data, true);
+    }
+
+    function updateLegendCounters() {
+      const counts = {};
+      voxels.forEach(v => {
+        counts[v.userData.status] = (counts[v.userData.status] || 0) + 1;
+      });
+
+      const legendContainer = document.getElementById('legend-items');
+      legendContainer.innerHTML = '';
+
+      matrixData.statuses.forEach((s, idx) => {
+        const count = counts[s.id] || 0;
+        const keyHint = hotkeys[idx] ? ` [${hotkeys[idx]}]` : '';
+        const item = document.createElement('div');
+        item.className = 'legend-item';
+        item.innerHTML = `
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div class="color-box" style="background:${s.color}"></div>
+            <span>${s.label}${keyHint}</span>
+          </div>
+          <span class="legend-count-badge">${count}</span>
+        `;
+        legendContainer.appendChild(item);
+      });
     }
 
     function buildMatrix(data, resetCamera = false) {
@@ -502,7 +528,6 @@
               (d * spacing) - offsetZ
             );
 
-            // Set initial scale
             mesh.scale.set(visConfig.targetScale, visConfig.targetScale, visConfig.targetScale);
 
             mesh.userData = {
@@ -544,6 +569,8 @@
         scene.add(sprite);
         labelSprites.push(sprite);
       });
+
+      updateLegendCounters();
 
       if (resetCamera) {
         const maxDim = Math.max(numCols, numRows, numDepth);
@@ -676,7 +703,6 @@
       }
     }
 
-    // Keyboard Hotkey Listener (Q, W, E, R, T)
     function onKeyDown(event) {
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
         return;
@@ -726,7 +752,6 @@
       mesh.userData.status = newStatusId;
       const visConfig = getMeshVisualConfig(newStatusId);
 
-      // Set target scale for smooth animation loop
       mesh.userData.targetScale = visConfig.targetScale;
 
       mesh.material.color.set(new THREE.Color(statusMap[newStatusId].color));
@@ -740,6 +765,7 @@
         mesh.visible = true;
       }
 
+      updateLegendCounters();
       saveStateToLocalStorage();
       showCellInspector(mesh);
     }
@@ -801,7 +827,6 @@
       requestAnimationFrame(animate);
       controls.update();
 
-      // Smooth Lerp Animation for Scale Growth / Shrink
       voxels.forEach(mesh => {
         if (mesh.userData.targetScale !== undefined) {
           const target = mesh.userData.targetScale;
