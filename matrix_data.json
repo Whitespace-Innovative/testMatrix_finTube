@@ -4,7 +4,8 @@
     "columns": [
       "Interval Weight",
       "Wave Front",
-      "Total Loading"
+      "Total Loading",
+      "Uniform CFM"
     ],
     "rows": [
       "1 Coat",
@@ -17,7 +18,8 @@
       "Fan Speed 100%",
       "Fan Speed 75%",
       "Fan Speed 50%",
-      "Fan Speed 25%"
+      "Fan Speed 25%",
+      "5.5 CFM"
     ]
   },
   "statuses": [
@@ -74,6 +76,12 @@
     },
     {
       "col": 0,
+      "row": 0,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 0,
       "row": 1,
       "depth": 0,
       "status": "pending"
@@ -98,6 +106,12 @@
     },
     {
       "col": 0,
+      "row": 1,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 0,
       "row": 2,
       "depth": 0,
       "status": "pending"
@@ -122,6 +136,12 @@
     },
     {
       "col": 0,
+      "row": 2,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 0,
       "row": 3,
       "depth": 0,
       "status": "pending"
@@ -142,6 +162,12 @@
       "col": 0,
       "row": 3,
       "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 0,
+      "row": 3,
+      "depth": 4,
       "status": "out_of_scope"
     },
     {
@@ -169,6 +195,12 @@
       "status": "out_of_scope"
     },
     {
+      "col": 0,
+      "row": 4,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
       "col": 1,
       "row": 0,
       "depth": 0,
@@ -194,6 +226,12 @@
     },
     {
       "col": 1,
+      "row": 0,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
       "row": 1,
       "depth": 0,
       "status": "out_of_scope"
@@ -214,6 +252,12 @@
       "col": 1,
       "row": 1,
       "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "depth": 4,
       "status": "out_of_scope"
     },
     {
@@ -242,6 +286,12 @@
     },
     {
       "col": 1,
+      "row": 2,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
       "row": 3,
       "depth": 0,
       "status": "out_of_scope"
@@ -266,6 +316,12 @@
     },
     {
       "col": 1,
+      "row": 3,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
       "row": 4,
       "depth": 0,
       "status": "passed"
@@ -287,6 +343,12 @@
       "row": 4,
       "depth": 3,
       "status": "passed"
+    },
+    {
+      "col": 1,
+      "row": 4,
+      "depth": 4,
+      "status": "out_of_scope"
     },
     {
       "col": 2,
@@ -314,6 +376,12 @@
     },
     {
       "col": 2,
+      "row": 0,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
       "row": 1,
       "depth": 0,
       "status": "pending"
@@ -338,6 +406,12 @@
     },
     {
       "col": 2,
+      "row": 1,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
       "row": 2,
       "depth": 0,
       "status": "pending"
@@ -362,6 +436,12 @@
     },
     {
       "col": 2,
+      "row": 2,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
       "row": 3,
       "depth": 0,
       "status": "pending"
@@ -382,6 +462,12 @@
       "col": 2,
       "row": 3,
       "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 3,
+      "depth": 4,
       "status": "out_of_scope"
     },
     {
@@ -407,6 +493,162 @@
       "row": 4,
       "depth": 3,
       "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 4,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 0,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 0,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 0,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 0,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 0,
+      "depth": 4,
+      "status": "pending"
+    },
+    {
+      "col": 3,
+      "row": 1,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 1,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 1,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 1,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 1,
+      "depth": 4,
+      "status": "pending"
+    },
+    {
+      "col": 3,
+      "row": 2,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 2,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 2,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 2,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 2,
+      "depth": 4,
+      "status": "pending"
+    },
+    {
+      "col": 3,
+      "row": 3,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 3,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 3,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 3,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 3,
+      "depth": 4,
+      "status": "pending"
+    },
+    {
+      "col": 3,
+      "row": 4,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 4,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 4,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 4,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 4,
+      "depth": 4,
+      "status": "pending"
     }
   ]
 }
