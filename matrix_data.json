@@ -175,7 +175,7 @@
       "col": 0,
       "row": 4,
       "depth": 0,
-      "status": "in_progress"
+      "status": "passed"
     },
     {
       "col": 0,
@@ -475,7 +475,7 @@
       "col": 2,
       "row": 4,
       "depth": 0,
-      "status": "in_progress"
+      "status": "passed"
     },
     {
       "col": 2,
