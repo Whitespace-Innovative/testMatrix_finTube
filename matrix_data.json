@@ -13,7 +13,8 @@
       "2 Coat",
       "3 Coat",
       "4 Coat",
-      "5 Coat"
+      "5 Coat",
+      "6 Coat"
     ],
     "depth": [
       "Fan Speed 100%",
@@ -202,6 +203,36 @@
       "status": "out_of_scope"
     },
     {
+      "col": 0,
+      "row": 5,
+      "depth": 0,
+      "status": "failed"
+    },
+    {
+      "col": 0,
+      "row": 5,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 0,
+      "row": 5,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 0,
+      "row": 5,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 0,
+      "row": 5,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
       "col": 1,
       "row": 0,
       "depth": 0,
@@ -352,6 +383,36 @@
       "status": "out_of_scope"
     },
     {
+      "col": 1,
+      "row": 5,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 5,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 5,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 5,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 5,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
       "col": 2,
       "row": 0,
       "depth": 0,
@@ -502,6 +563,36 @@
       "status": "out_of_scope"
     },
     {
+      "col": 2,
+      "row": 5,
+      "depth": 0,
+      "status": "passed"
+    },
+    {
+      "col": 2,
+      "row": 5,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 5,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 5,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 5,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
       "col": 3,
       "row": 0,
       "depth": 0,
@@ -649,17 +740,47 @@
       "col": 3,
       "row": 4,
       "depth": 4,
-      "status": "in_progress"
+      "status": "passed"
     },
     {
-      "col": 4,
-      "row": 0,
+      "col": 3,
+      "row": 5,
       "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 5,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 5,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 5,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 5,
+      "depth": 4,
       "status": "pending"
     },
     {
       "col": 4,
       "row": 0,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 4,
+      "row": 0,
       "depth": 1,
       "status": "out_of_scope"
     },
@@ -685,7 +806,7 @@
       "col": 4,
       "row": 1,
       "depth": 0,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 4,
@@ -715,7 +836,7 @@
       "col": 4,
       "row": 2,
       "depth": 0,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 4,
@@ -745,7 +866,7 @@
       "col": 4,
       "row": 3,
       "depth": 0,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 4,
@@ -775,7 +896,7 @@
       "col": 4,
       "row": 4,
       "depth": 0,
-      "status": "pending"
+      "status": "out_of_scope"
     },
     {
       "col": 4,
@@ -798,6 +919,36 @@
     {
       "col": 4,
       "row": 4,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 4,
+      "row": 5,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 4,
+      "row": 5,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 4,
+      "row": 5,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 4,
+      "row": 5,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 4,
+      "row": 5,
       "depth": 4,
       "status": "out_of_scope"
     }
