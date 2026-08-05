@@ -21,7 +21,7 @@
       "Fan Speed 75%",
       "Fan Speed 50%",
       "Fan Speed 25%",
-      "5 CFM"
+      "5.5 CFM"
     ]
   },
   "statuses": [
@@ -206,543 +206,543 @@
       "col": 0,
       "row": 5,
       "depth": 0,
+      "status": "passed"
+    },
+    {
+      "col": 0,
+      "row": 5,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 0,
+      "row": 5,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 0,
+      "row": 5,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 0,
+      "row": 5,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 0,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 0,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 0,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 0,
+      "depth": 3,
+      "status": "passed"
+    },
+    {
+      "col": 1,
+      "row": 0,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 2,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 2,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 2,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 2,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 2,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 3,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 3,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 3,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 3,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 3,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 4,
+      "depth": 0,
+      "status": "passed"
+    },
+    {
+      "col": 1,
+      "row": 4,
+      "depth": 1,
+      "status": "passed"
+    },
+    {
+      "col": 1,
+      "row": 4,
+      "depth": 2,
+      "status": "passed"
+    },
+    {
+      "col": 1,
+      "row": 4,
+      "depth": 3,
+      "status": "passed"
+    },
+    {
+      "col": 1,
+      "row": 4,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 5,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 5,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 5,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 5,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 1,
+      "row": 5,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 0,
+      "depth": 0,
+      "status": "passed"
+    },
+    {
+      "col": 2,
+      "row": 0,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 0,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 0,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 0,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 1,
+      "depth": 0,
+      "status": "passed"
+    },
+    {
+      "col": 2,
+      "row": 1,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 1,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 1,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 1,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 2,
+      "depth": 0,
+      "status": "passed"
+    },
+    {
+      "col": 2,
+      "row": 2,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 2,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 2,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 2,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 3,
+      "depth": 0,
+      "status": "passed"
+    },
+    {
+      "col": 2,
+      "row": 3,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 3,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 3,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 3,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 4,
+      "depth": 0,
+      "status": "passed"
+    },
+    {
+      "col": 2,
+      "row": 4,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 4,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 4,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 4,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 5,
+      "depth": 0,
+      "status": "passed"
+    },
+    {
+      "col": 2,
+      "row": 5,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 5,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 5,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 2,
+      "row": 5,
+      "depth": 4,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 0,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 0,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 0,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 0,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 0,
+      "depth": 4,
+      "status": "passed"
+    },
+    {
+      "col": 3,
+      "row": 1,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 1,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 1,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 1,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 1,
+      "depth": 4,
+      "status": "passed"
+    },
+    {
+      "col": 3,
+      "row": 2,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 2,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 2,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 2,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 2,
+      "depth": 4,
+      "status": "passed"
+    },
+    {
+      "col": 3,
+      "row": 3,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 3,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 3,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 3,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 3,
+      "depth": 4,
+      "status": "passed"
+    },
+    {
+      "col": 3,
+      "row": 4,
+      "depth": 0,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 4,
+      "depth": 1,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 4,
+      "depth": 2,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 4,
+      "depth": 3,
+      "status": "out_of_scope"
+    },
+    {
+      "col": 3,
+      "row": 4,
+      "depth": 4,
       "status": "failed"
     },
     {
-      "col": 0,
-      "row": 5,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 0,
-      "row": 5,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 0,
-      "row": 5,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 0,
-      "row": 5,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 0,
-      "depth": 0,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 0,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 0,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 0,
-      "depth": 3,
-      "status": "passed"
-    },
-    {
-      "col": 1,
-      "row": 0,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 1,
-      "depth": 0,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 1,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 1,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 1,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 1,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 2,
-      "depth": 0,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 2,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 2,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 2,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 2,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 3,
-      "depth": 0,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 3,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 3,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 3,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 3,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 4,
-      "depth": 0,
-      "status": "passed"
-    },
-    {
-      "col": 1,
-      "row": 4,
-      "depth": 1,
-      "status": "passed"
-    },
-    {
-      "col": 1,
-      "row": 4,
-      "depth": 2,
-      "status": "passed"
-    },
-    {
-      "col": 1,
-      "row": 4,
-      "depth": 3,
-      "status": "passed"
-    },
-    {
-      "col": 1,
-      "row": 4,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 5,
-      "depth": 0,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 5,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 5,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 5,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 1,
-      "row": 5,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 0,
-      "depth": 0,
-      "status": "passed"
-    },
-    {
-      "col": 2,
-      "row": 0,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 0,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 0,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 0,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 1,
-      "depth": 0,
-      "status": "passed"
-    },
-    {
-      "col": 2,
-      "row": 1,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 1,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 1,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 1,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 2,
-      "depth": 0,
-      "status": "passed"
-    },
-    {
-      "col": 2,
-      "row": 2,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 2,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 2,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 2,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 3,
-      "depth": 0,
-      "status": "passed"
-    },
-    {
-      "col": 2,
-      "row": 3,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 3,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 3,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 3,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 4,
-      "depth": 0,
-      "status": "passed"
-    },
-    {
-      "col": 2,
-      "row": 4,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 4,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 4,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 4,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 5,
-      "depth": 0,
-      "status": "passed"
-    },
-    {
-      "col": 2,
-      "row": 5,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 5,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 5,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 2,
-      "row": 5,
-      "depth": 4,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 0,
-      "depth": 0,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 0,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 0,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 0,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 0,
-      "depth": 4,
-      "status": "passed"
-    },
-    {
-      "col": 3,
-      "row": 1,
-      "depth": 0,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 1,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 1,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 1,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 1,
-      "depth": 4,
-      "status": "passed"
-    },
-    {
-      "col": 3,
-      "row": 2,
-      "depth": 0,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 2,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 2,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 2,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 2,
-      "depth": 4,
-      "status": "passed"
-    },
-    {
-      "col": 3,
-      "row": 3,
-      "depth": 0,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 3,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 3,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 3,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 3,
-      "depth": 4,
-      "status": "passed"
-    },
-    {
-      "col": 3,
-      "row": 4,
-      "depth": 0,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 4,
-      "depth": 1,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 4,
-      "depth": 2,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 4,
-      "depth": 3,
-      "status": "out_of_scope"
-    },
-    {
-      "col": 3,
-      "row": 4,
-      "depth": 4,
-      "status": "passed"
-    },
-    {
       "col": 3,
       "row": 5,
       "depth": 0,
@@ -770,7 +770,7 @@
       "col": 3,
       "row": 5,
       "depth": 4,
-      "status": "pending"
+      "status": "failed"
     },
     {
       "col": 4,
